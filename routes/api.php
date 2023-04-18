@@ -28,7 +28,7 @@ Route::middleware('auth:api')->group(function(){
 
     //Mural de avisos
     Route::get('/walls', [WallController::class, 'index']);
-    Route::post('/wall/{id}/like', [WallControlle::class, 'like']);
+    Route::post('/wall/{id}/like', [WallController::class, 'like']);
 
     //Documentos
     Route::get('/docs', [DocController::class, 'index']);
