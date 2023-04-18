@@ -23,7 +23,7 @@ Route::post('/auth/login', [AuthController::class, 'login']);
 Route::post('/auth/register', [AuthController::class, 'register']);
 
 Route::middleware('auth:api')->group(function(){
-    Route::post('/auth/validated', [AuthController::class, 'validatedToken']);
+    Route::post('/auth/validate', [AuthController::class, 'validatedToken']);
     Route::post('/auth/logout', [AuthController::class, 'logout']);
 
     //Mural de avisos
