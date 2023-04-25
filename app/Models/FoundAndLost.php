@@ -11,5 +11,5 @@ class FoundAndLost extends Model
 
     public $timestamps = false;
 
-    public $table = 'foundandlosts';
+    public $table = 'foundandlost';
 }
