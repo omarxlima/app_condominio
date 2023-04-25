@@ -72,4 +72,23 @@ class FoundAndLostController extends Controller
 
         return $array;
     }
+
+    public function update($id, Request $request) {
+        $array = ['error' => ''];
+        $status = $request->input('status');
+        if ($status && in_array($status, ['lost', 'recovery'])) {
+            $item = FoundAndLost::find($id);
+            if($item){
+                $item->status = $status;
+                $item->save();
+            }else {
+                return $array['error'] = 'Produto inexistente!';
+            }
+        } else {
+            return $array['error'] = 'status não existe';
+        }
+
+        return $array;
+
+    }
 }
